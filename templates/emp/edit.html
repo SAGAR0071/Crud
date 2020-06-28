@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load crispy_forms_tags %}
+
+<form method="POST" class="post-form" action="{% url 'update' id %}">
+    {% csrf_token %}
+
+    <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Employee Id:</label>
+    <div class="col-sm-4">
+
+      {{ form.empid}}
+      {{cripsy}}
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Employee Name:</label>
+    <div class="col-sm-4">
+      {{ form.Name }}
+    </div>
+  </div>
+    <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Employee Email:</label>
+    <div class="col-sm-4">
+      {{ form.email }}
+    </div>
+  </div>
+    <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Employee Mobile</label>
+    <div class="col-sm-4">
+      {{ form.Mobile }}
+    </div>
+  </div>
+    <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Employee Position</label>
+    <div class="col-sm-4">
+      {{ form.position }}
+    </div>
+  </div>
+    <div class="form-group row">
+    <label class="col-sm-3 col-form-label"></label>
+      <div class="row"
+    <div class="col-sm-9">
+    <button type="submit" class="btn btn-primary"><i class="fa fa-database" aria-hidden="true"></i> Update </button>
+      </div>
+      <div class="col-sm-3">
+        <center><a href="/show/" class="btn btn-dark">Employee List</a></center>
+           <div>
+           </div>
+
+  </div>
+    </div>
+</form>
+
+{% endblock %}
